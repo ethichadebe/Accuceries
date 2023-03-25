@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Accuceries</string>
+    <string name="accucery">Accucery</string>
+    <string name="item_image">Item image</string>
+</resources>

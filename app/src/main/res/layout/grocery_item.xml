@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_64sdp">
+
+    <ImageView
+        android:id="@+id/ivImage"
+        android:layout_width="@dimen/_56sdp"
+        android:layout_height="@dimen/_56sdp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:contentDescription="@string/item_image"
+        android:src="@color/primaryColor" />
+
+    <TextView
+        android:id="@+id/tvItemName"
+        style="@style/ItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_toStartOf="@+id/rlQuantity"
+        android:layout_toEndOf="@id/ivImage"
+        android:text="Maize Brown Bread Loaf 600g" />
+
+    <TextView
+        android:id="@+id/tvItemQuantity"
+        style="@style/ItemQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvItemName"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_toEndOf="@id/ivImage"
+        android:text="x5"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvItemPrice"
+        style="@style/ItemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvItemName"
+        android:layout_toEndOf="@id/tvItemQuantity"
+        android:text="R9.99"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_alignParentBottom="true"
+        android:background="#d0dcf2" />
+
+    <LinearLayout
+        android:id="@+id/rlQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvAdd"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_6sdp"
+            android:text="+"
+            android:textColor="@color/green"
+            android:textSize="@dimen/_16ssp" />
+
+        <TextView
+            android:id="@+id/tvSubtract"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_6sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_6sdp"
+            android:text="-"
+            android:textColor="@color/red"
+            android:textSize="@dimen/_16ssp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>
