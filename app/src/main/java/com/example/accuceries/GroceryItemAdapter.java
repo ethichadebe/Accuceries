@@ -19,12 +19,21 @@ public class GroceryItemAdapter extends RecyclerView.Adapter<GroceryItemAdapter.
 
     private ArrayList<GroceryItem> groceryItems;
     private Context context;
+    private OnItemClickListener listener;
 
+    public interface OnItemClickListener{
+        void onAddItemClick(int position);
+        void onSubtractItemClick(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener tListener){
+        listener = tListener;
+    }
     public static class GroceryItemViewHolder extends RecyclerView.ViewHolder {
         public ImageView ivImage;
         public TextView tvItemName, tvItemQuantity, tvItemPrice, tvAdd, tvSubtract;
 
-        public GroceryItemViewHolder(@NonNull View itemView) {
+        public GroceryItemViewHolder(@NonNull View itemView, OnItemClickListener tListener) {
             super(itemView);
             ivImage = itemView.findViewById(R.id.ivImage);
             tvItemName = itemView.findViewById(R.id.tvItemName);
@@ -32,6 +41,29 @@ public class GroceryItemAdapter extends RecyclerView.Adapter<GroceryItemAdapter.
             tvItemPrice = itemView.findViewById(R.id.tvItemPrice);
             tvAdd = itemView.findViewById(R.id.tvAdd);
             tvSubtract = itemView.findViewById(R.id.tvSubtract);
+
+            tvAdd.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (tListener!=null){
+                        int position = getAdapterPosition();
+                        if (position!=RecyclerView.NO_POSITION){
+                            tListener.onAddItemClick(position);
+                        }
+                    }
+                }
+            });
+            tvSubtract.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (tListener!=null){
+                        int position = getAdapterPosition();
+                        if (position!=RecyclerView.NO_POSITION){
+                            tListener.onSubtractItemClick(position);
+                        }
+                    }
+                }
+            });
         }
     }
 
@@ -44,7 +76,7 @@ public class GroceryItemAdapter extends RecyclerView.Adapter<GroceryItemAdapter.
     @Override
     public GroceryItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.grocery_item, parent, false);
-        GroceryItemViewHolder glvh = new GroceryItemViewHolder(v);
+        GroceryItemViewHolder glvh = new GroceryItemViewHolder(v,listener);
         return glvh;
     }
 

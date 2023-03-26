@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<GroceryItem> groceryItems;
 
     private RecyclerView rvGroceryItems;
-    private RecyclerView.Adapter adapter;
+    private GroceryItemAdapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     private ItemTouchHelper itemTouchHelper;
     private GroceryItem deletedItem;
@@ -37,48 +38,53 @@ public class MainActivity extends AppCompatActivity {
         itemTouchHelper = new ItemTouchHelper(simpleCallback);
         groceryItems = new ArrayList<>();
 
+        buildRecyclerview();
+
+    }
+
+    private void buildRecyclerview() {
         groceryItems.add(new GroceryItem("Maize Brown Bread Loaf 600g",
                 "https://www.shoprite.co.za/medias/10794510EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3w0NTk4OHxpbWFnZS93ZWJwfGltYWdlcy9oY2EvaGFkLzEwMTczMzQ5ODIyNDk0LndlYnB8ZmI1NWViYTc0YmU3MjNhZmJkYzkxOGU3Mzk0OTQyMzE2MzQ4MjJkZmEwNjVlMjYyNmE3YWY0ODdhMjRmMTU1NA",
-                9.99, 4,false));
+                9.99, 4, false));
         groceryItems.add(new GroceryItem("Farmer's Choice Frozen Chicken Mixed Portions 5kg",
                 "https://www.shoprite.co.za/medias/10248591EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzNDI4MnxpbWFnZS93ZWJwfGltYWdlcy9oMTYvaGFlLzEwMTA1MDc2MDIzMzI2LndlYnB8Y2E0YmVmZjNiMTQ4MjAyZDBkYzFmZmNlZGJlMDJhNThhYzhlYzQ3NTZmMTQ0NzhmNjY5NzY1Mjk3YzRhNTBkNA",
-                179.99, 1,false));
+                179.99, 1, false));
         groceryItems.add(new GroceryItem("Koo Baked Beans In Tomato Sauce 410g",
                 "https://www.shoprite.co.za/medias/10126789EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzMTI3MnxpbWFnZS93ZWJwfGltYWdlcy9oYjIvaDZjLzkwMDQ5NzUyOTI0NDYud2VicHxmM2YxYThjMzFjNmI0YTAwMjFhZGRlN2UwZDY3N2Y1OTM3YzJlNWVmOWI2NGEyNGIwMjcyMTI1ZjdkYWVkZTM3",
-                16.99, 6,false));
+                16.99, 6, false));
         groceryItems.add(new GroceryItem("Nestlé Cremora Coffee Creamer Box 750g",
                 "https://www.shoprite.co.za/medias/10126789EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzMTI3MnxpbWFnZS93ZWJwfGltYWdlcy9oYjIvaDZjLzkwMDQ5NzUyOTI0NDYud2VicHxmM2YxYThjMzFjNmI0YTAwMjFhZGRlN2UwZDY3N2Y1OTM3YzJlNWVmOWI2NGEyNGIwMjcyMTI1ZjdkYWVkZTM3",
-                49.99, 3,false));
+                49.99, 3, false));
         groceryItems.add(new GroceryItem("Spinach Bunch",
                 "https://www.shoprite.co.za/medias/10151614EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzOTM4MHxpbWFnZS93ZWJwfGltYWdlcy9oYTEvaDU1Lzg5OTg0OTI0NzEzMjYud2VicHwzMzI3ZTBlNjkyZjFkYTZlODA3NGYxYmExYWQxM2Y2NWJhYzJiNDFiZTMwZDMxNmJmMWIxOTA5ODYyNDBjMmMz",
-                14.99, 1,false));
+                14.99, 1, false));
         groceryItems.add(new GroceryItem("Simba KFC Zinger Wings Flavour Potato Chips 120g",
                 "https://www.shoprite.co.za/medias/10151614EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzOTM4MHxpbWFnZS93ZWJwfGltYWdlcy9oYTEvaDU1Lzg5OTg0OTI0NzEzMjYud2VicHwzMzI3ZTBlNjkyZjFkYTZlODA3NGYxYmExYWQxM2Y2NWJhYzJiNDFiZTMwZDMxNmJmMWIxOTA5ODYyNDBjMmMz",
-                19.99, 2,false));
+                19.99, 2, false));
         groceryItems.add(new GroceryItem("Sunfoil Pure Sunflower Seed Oil 750ml",
                 "https://www.shoprite.co.za/medias/10130356EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wyMDAxOHxpbWFnZS93ZWJwfGltYWdlcy9oMjcvaGU1LzEwMjQ4NTg3Mzc4NzE4LndlYnB8NjAzNTVkZTg1YWE5MzUxMTk2NDU0ZTBjNzk3YWZhNGJkZjM5NjQxY2I2NTlmOTZmZDIyZDQ5MWE4MGFjOGRmMw",
-                39.99, 5,false));
+                39.99, 5, false));
         groceryItems.add(new GroceryItem("Maize Brown Bread Loaf 600g",
                 "https://www.shoprite.co.za/medias/10794510EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3w0NTk4OHxpbWFnZS93ZWJwfGltYWdlcy9oY2EvaGFkLzEwMTczMzQ5ODIyNDk0LndlYnB8ZmI1NWViYTc0YmU3MjNhZmJkYzkxOGU3Mzk0OTQyMzE2MzQ4MjJkZmEwNjVlMjYyNmE3YWY0ODdhMjRmMTU1NA",
-                9.99, 4,false));
+                9.99, 4, false));
         groceryItems.add(new GroceryItem("Farmer's Choice Frozen Chicken Mixed Portions 5kg",
                 "https://www.shoprite.co.za/medias/10248591EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzNDI4MnxpbWFnZS93ZWJwfGltYWdlcy9oMTYvaGFlLzEwMTA1MDc2MDIzMzI2LndlYnB8Y2E0YmVmZjNiMTQ4MjAyZDBkYzFmZmNlZGJlMDJhNThhYzhlYzQ3NTZmMTQ0NzhmNjY5NzY1Mjk3YzRhNTBkNA",
-                179.99, 1,false));
+                179.99, 1, false));
         groceryItems.add(new GroceryItem("Koo Baked Beans In Tomato Sauce 410g",
                 "https://www.shoprite.co.za/medias/10126789EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzMTI3MnxpbWFnZS93ZWJwfGltYWdlcy9oYjIvaDZjLzkwMDQ5NzUyOTI0NDYud2VicHxmM2YxYThjMzFjNmI0YTAwMjFhZGRlN2UwZDY3N2Y1OTM3YzJlNWVmOWI2NGEyNGIwMjcyMTI1ZjdkYWVkZTM3",
-                16.99, 6,false));
+                16.99, 6, false));
         groceryItems.add(new GroceryItem("Nestlé Cremora Coffee Creamer Box 750g",
                 "https://www.shoprite.co.za/medias/10126789EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzMTI3MnxpbWFnZS93ZWJwfGltYWdlcy9oYjIvaDZjLzkwMDQ5NzUyOTI0NDYud2VicHxmM2YxYThjMzFjNmI0YTAwMjFhZGRlN2UwZDY3N2Y1OTM3YzJlNWVmOWI2NGEyNGIwMjcyMTI1ZjdkYWVkZTM3",
-                49.99, 3,false));
+                49.99, 3, false));
         groceryItems.add(new GroceryItem("Spinach Bunch",
                 "https://www.shoprite.co.za/medias/10151614EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzOTM4MHxpbWFnZS93ZWJwfGltYWdlcy9oYTEvaDU1Lzg5OTg0OTI0NzEzMjYud2VicHwzMzI3ZTBlNjkyZjFkYTZlODA3NGYxYmExYWQxM2Y2NWJhYzJiNDFiZTMwZDMxNmJmMWIxOTA5ODYyNDBjMmMz",
-                14.99, 1,false));
+                14.99, 1, false));
         groceryItems.add(new GroceryItem("Simba KFC Zinger Wings Flavour Potato Chips 120g",
                 "https://www.shoprite.co.za/medias/10151614EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzOTM4MHxpbWFnZS93ZWJwfGltYWdlcy9oYTEvaDU1Lzg5OTg0OTI0NzEzMjYud2VicHwzMzI3ZTBlNjkyZjFkYTZlODA3NGYxYmExYWQxM2Y2NWJhYzJiNDFiZTMwZDMxNmJmMWIxOTA5ODYyNDBjMmMz",
-                19.99, 2,false));
+                19.99, 2, false));
         groceryItems.add(new GroceryItem("Sunfoil Pure Sunflower Seed Oil 750ml",
                 "https://www.shoprite.co.za/medias/10130356EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wyMDAxOHxpbWFnZS93ZWJwfGltYWdlcy9oMjcvaGU1LzEwMjQ4NTg3Mzc4NzE4LndlYnB8NjAzNTVkZTg1YWE5MzUxMTk2NDU0ZTBjNzk3YWZhNGJkZjM5NjQxY2I2NTlmOTZmZDIyZDQ5MWE4MGFjOGRmMw",
-                39.99, 5,false));
+                39.99, 5, false));
 
         rvGroceryItems = findViewById(R.id.rvGroceryList);
         rvGroceryItems.setHasFixedSize(true);
@@ -89,7 +95,21 @@ public class MainActivity extends AppCompatActivity {
         rvGroceryItems.setAdapter(adapter);
         itemTouchHelper.attachToRecyclerView(rvGroceryItems);
 
+        adapter.setOnItemClickListener(new GroceryItemAdapter.OnItemClickListener() {
+            @Override
+            public void onAddItemClick(int position) {
+                groceryItems.get(position).setQuantity(groceryItems.get(position).getQuantity() + 1);
+                adapter.notifyItemChanged(position);
+            }
 
+            @Override
+            public void onSubtractItemClick(int position) {
+                if (groceryItems.get(position).getQuantity() > 1) {
+                    groceryItems.get(position).setQuantity(groceryItems.get(position).getQuantity() - 1);
+                    adapter.notifyItemChanged(position);
+                }
+            }
+        });
     }
 
     ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
@@ -106,13 +126,17 @@ public class MainActivity extends AppCompatActivity {
                 groceryItems.remove(position);
                 adapter.notifyItemRemoved(position);
 
-                Snackbar.make(rvGroceryItems, deletedItem.getName(), BaseTransientBottomBar.LENGTH_LONG).setAction("Undo", new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        groceryItems.add(position, deletedItem);
-                        adapter.notifyItemInserted(position);
-                    }
-                }).show();
+                Snackbar.make(rvGroceryItems, deletedItem.getName() + " has been removed.", BaseTransientBottomBar.LENGTH_LONG).setAction("Undo", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                groceryItems.add(position, deletedItem);
+                                adapter.notifyItemInserted(position);
+                            }
+                        })
+                        .setBackgroundTint(getResources().getColor(R.color.primaryColor))
+                        .setTextColor(Color.WHITE)
+                        .setActionTextColor(getResources().getColor(R.color.red))
+                        .show();
             }
         }
 
