@@ -51,7 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:layout_alignParentBottom="true"
-        android:background="#d0dcf2" />
+        android:background="#9FF0FF" />
 
     <LinearLayout
         android:id="@+id/rlQuantity"

@@ -133,9 +133,9 @@ public class MainActivity extends AppCompatActivity {
                                 adapter.notifyItemInserted(position);
                             }
                         })
-                        .setBackgroundTint(getResources().getColor(R.color.primaryColor))
-                        .setTextColor(Color.WHITE)
-                        .setActionTextColor(getResources().getColor(R.color.red))
+                        .setBackgroundTint(Color.WHITE)
+                            .setTextColor(Color.BLACK)
+                        .setActionTextColor(getResources().getColor(R.color.primaryColor))
                         .show();
             }
         }
