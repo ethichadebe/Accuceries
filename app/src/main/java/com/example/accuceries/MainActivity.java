@@ -39,46 +39,46 @@ public class MainActivity extends AppCompatActivity {
 
         groceryItems.add(new GroceryItem("Maize Brown Bread Loaf 600g",
                 "https://www.shoprite.co.za/medias/10794510EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3w0NTk4OHxpbWFnZS93ZWJwfGltYWdlcy9oY2EvaGFkLzEwMTczMzQ5ODIyNDk0LndlYnB8ZmI1NWViYTc0YmU3MjNhZmJkYzkxOGU3Mzk0OTQyMzE2MzQ4MjJkZmEwNjVlMjYyNmE3YWY0ODdhMjRmMTU1NA",
-                9.99, 4));
+                9.99, 4,false));
         groceryItems.add(new GroceryItem("Farmer's Choice Frozen Chicken Mixed Portions 5kg",
                 "https://www.shoprite.co.za/medias/10248591EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzNDI4MnxpbWFnZS93ZWJwfGltYWdlcy9oMTYvaGFlLzEwMTA1MDc2MDIzMzI2LndlYnB8Y2E0YmVmZjNiMTQ4MjAyZDBkYzFmZmNlZGJlMDJhNThhYzhlYzQ3NTZmMTQ0NzhmNjY5NzY1Mjk3YzRhNTBkNA",
-                179.99, 1));
+                179.99, 1,false));
         groceryItems.add(new GroceryItem("Koo Baked Beans In Tomato Sauce 410g",
                 "https://www.shoprite.co.za/medias/10126789EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzMTI3MnxpbWFnZS93ZWJwfGltYWdlcy9oYjIvaDZjLzkwMDQ5NzUyOTI0NDYud2VicHxmM2YxYThjMzFjNmI0YTAwMjFhZGRlN2UwZDY3N2Y1OTM3YzJlNWVmOWI2NGEyNGIwMjcyMTI1ZjdkYWVkZTM3",
-                16.99, 6));
+                16.99, 6,false));
         groceryItems.add(new GroceryItem("Nestlé Cremora Coffee Creamer Box 750g",
                 "https://www.shoprite.co.za/medias/10126789EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzMTI3MnxpbWFnZS93ZWJwfGltYWdlcy9oYjIvaDZjLzkwMDQ5NzUyOTI0NDYud2VicHxmM2YxYThjMzFjNmI0YTAwMjFhZGRlN2UwZDY3N2Y1OTM3YzJlNWVmOWI2NGEyNGIwMjcyMTI1ZjdkYWVkZTM3",
-                49.99, 3));
+                49.99, 3,false));
         groceryItems.add(new GroceryItem("Spinach Bunch",
                 "https://www.shoprite.co.za/medias/10151614EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzOTM4MHxpbWFnZS93ZWJwfGltYWdlcy9oYTEvaDU1Lzg5OTg0OTI0NzEzMjYud2VicHwzMzI3ZTBlNjkyZjFkYTZlODA3NGYxYmExYWQxM2Y2NWJhYzJiNDFiZTMwZDMxNmJmMWIxOTA5ODYyNDBjMmMz",
-                14.99, 1));
+                14.99, 1,false));
         groceryItems.add(new GroceryItem("Simba KFC Zinger Wings Flavour Potato Chips 120g",
                 "https://www.shoprite.co.za/medias/10151614EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzOTM4MHxpbWFnZS93ZWJwfGltYWdlcy9oYTEvaDU1Lzg5OTg0OTI0NzEzMjYud2VicHwzMzI3ZTBlNjkyZjFkYTZlODA3NGYxYmExYWQxM2Y2NWJhYzJiNDFiZTMwZDMxNmJmMWIxOTA5ODYyNDBjMmMz",
-                19.99, 2));
+                19.99, 2,false));
         groceryItems.add(new GroceryItem("Sunfoil Pure Sunflower Seed Oil 750ml",
                 "https://www.shoprite.co.za/medias/10130356EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wyMDAxOHxpbWFnZS93ZWJwfGltYWdlcy9oMjcvaGU1LzEwMjQ4NTg3Mzc4NzE4LndlYnB8NjAzNTVkZTg1YWE5MzUxMTk2NDU0ZTBjNzk3YWZhNGJkZjM5NjQxY2I2NTlmOTZmZDIyZDQ5MWE4MGFjOGRmMw",
-                39.99, 5));
+                39.99, 5,false));
         groceryItems.add(new GroceryItem("Maize Brown Bread Loaf 600g",
                 "https://www.shoprite.co.za/medias/10794510EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3w0NTk4OHxpbWFnZS93ZWJwfGltYWdlcy9oY2EvaGFkLzEwMTczMzQ5ODIyNDk0LndlYnB8ZmI1NWViYTc0YmU3MjNhZmJkYzkxOGU3Mzk0OTQyMzE2MzQ4MjJkZmEwNjVlMjYyNmE3YWY0ODdhMjRmMTU1NA",
-                9.99, 4));
+                9.99, 4,false));
         groceryItems.add(new GroceryItem("Farmer's Choice Frozen Chicken Mixed Portions 5kg",
                 "https://www.shoprite.co.za/medias/10248591EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzNDI4MnxpbWFnZS93ZWJwfGltYWdlcy9oMTYvaGFlLzEwMTA1MDc2MDIzMzI2LndlYnB8Y2E0YmVmZjNiMTQ4MjAyZDBkYzFmZmNlZGJlMDJhNThhYzhlYzQ3NTZmMTQ0NzhmNjY5NzY1Mjk3YzRhNTBkNA",
-                179.99, 1));
+                179.99, 1,false));
         groceryItems.add(new GroceryItem("Koo Baked Beans In Tomato Sauce 410g",
                 "https://www.shoprite.co.za/medias/10126789EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzMTI3MnxpbWFnZS93ZWJwfGltYWdlcy9oYjIvaDZjLzkwMDQ5NzUyOTI0NDYud2VicHxmM2YxYThjMzFjNmI0YTAwMjFhZGRlN2UwZDY3N2Y1OTM3YzJlNWVmOWI2NGEyNGIwMjcyMTI1ZjdkYWVkZTM3",
-                16.99, 6));
+                16.99, 6,false));
         groceryItems.add(new GroceryItem("Nestlé Cremora Coffee Creamer Box 750g",
                 "https://www.shoprite.co.za/medias/10126789EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzMTI3MnxpbWFnZS93ZWJwfGltYWdlcy9oYjIvaDZjLzkwMDQ5NzUyOTI0NDYud2VicHxmM2YxYThjMzFjNmI0YTAwMjFhZGRlN2UwZDY3N2Y1OTM3YzJlNWVmOWI2NGEyNGIwMjcyMTI1ZjdkYWVkZTM3",
-                49.99, 3));
+                49.99, 3,false));
         groceryItems.add(new GroceryItem("Spinach Bunch",
                 "https://www.shoprite.co.za/medias/10151614EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzOTM4MHxpbWFnZS93ZWJwfGltYWdlcy9oYTEvaDU1Lzg5OTg0OTI0NzEzMjYud2VicHwzMzI3ZTBlNjkyZjFkYTZlODA3NGYxYmExYWQxM2Y2NWJhYzJiNDFiZTMwZDMxNmJmMWIxOTA5ODYyNDBjMmMz",
-                14.99, 1));
+                14.99, 1,false));
         groceryItems.add(new GroceryItem("Simba KFC Zinger Wings Flavour Potato Chips 120g",
                 "https://www.shoprite.co.za/medias/10151614EA-20190726-Media-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wzOTM4MHxpbWFnZS93ZWJwfGltYWdlcy9oYTEvaDU1Lzg5OTg0OTI0NzEzMjYud2VicHwzMzI3ZTBlNjkyZjFkYTZlODA3NGYxYmExYWQxM2Y2NWJhYzJiNDFiZTMwZDMxNmJmMWIxOTA5ODYyNDBjMmMz",
-                19.99, 2));
+                19.99, 2,false));
         groceryItems.add(new GroceryItem("Sunfoil Pure Sunflower Seed Oil 750ml",
                 "https://www.shoprite.co.za/medias/10130356EA-checkers515Wx515H.webp?context=bWFzdGVyfGltYWdlc3wyMDAxOHxpbWFnZS93ZWJwfGltYWdlcy9oMjcvaGU1LzEwMjQ4NTg3Mzc4NzE4LndlYnB8NjAzNTVkZTg1YWE5MzUxMTk2NDU0ZTBjNzk3YWZhNGJkZjM5NjQxY2I2NTlmOTZmZDIyZDQ5MWE4MGFjOGRmMw",
-                39.99, 5));
+                39.99, 5,false));
 
         rvGroceryItems = findViewById(R.id.rvGroceryList);
         rvGroceryItems.setHasFixedSize(true);

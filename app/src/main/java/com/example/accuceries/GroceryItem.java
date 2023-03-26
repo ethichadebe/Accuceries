@@ -4,12 +4,14 @@ public class GroceryItem {
     private String name, image;
     private Double price;
     private int quantity;
+    private boolean isChecked;
 
-    public GroceryItem(String name, String image, Double price, int quantity) {
+    public GroceryItem(String name, String image, Double price, int quantity, boolean isChecked) {
         this.name = name;
         this.image = image;
         this.price = price;
         this.quantity = quantity;
+        this.isChecked = isChecked;
     }
 
     public String getName() {
@@ -42,5 +44,13 @@ public class GroceryItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+    public void setChecked() {
+        isChecked = !isChecked;
     }
 }
